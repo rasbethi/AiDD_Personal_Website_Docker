@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+        Head section:
+        - Sets character encoding and viewport for responsive design
+        - Sets page title
+        - Loads Google Fonts for typography
+        - Links to main stylesheet
+        - Adds custom styles for resume preview
+    -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume • Rasagnya Bethi</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /*
+            .resume-preview styles:
+            - Sets width and height for PDF iframe
+            - Adds border, shadow, and rounded corners
+            - Adds margin for spacing
+        */
+        .resume-preview {
+            width: 100%;
+            height: 90vh;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            margin-top: 1rem;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        Site header and navigation:
+        - Contains logo, hamburger menu for mobile, and navigation links
+        - Uses .site-header for sticky header styling
+        - .navwrap for flex layout
+        - .logo links to home page
+        - .hamburger toggles nav on mobile
+        - .nav contains main navigation links, with 'active' class for current page
+    -->
+    <header class="site-header">
+        <div class="container navwrap">
+            <a class="logo" href="index.html">RB</a>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+            <nav class="nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a class="active" href="resume.html">Resume</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!--
+            Section head:
+            - Displays main heading for the Resume page
+            - Uses .section-head for spacing and style
+            - Includes download button for resume PDF
+        -->
+        <header class="section-head">
+            <h1>Resume</h1>
+
+            <p class="center">
+                <a class="btn btn-solid btn-small" href="Rasagnya_Bethi_Data_Analyst_Resume.pdf" download>Download My
+                    Resume</a>
+            </p>
+        </header>
+        <!--
+            Resume PDF preview:
+            - Uses <iframe> to embed PDF
+            - .resume-preview for styling
+        -->
+        <iframe class="resume-preview" src="Rasagnya_Bethi_Data_Analyst_Resume.pdf"></iframe>
+    </main>
+
+    <!--
+        Site footer:
+        - .site-footer for styling
+        - Displays copyright
+        - Uses <span id="year"> for dynamic year (set by script.js)
+    -->
+    <footer class="site-footer">
+        <div class="container">
+            <small>© <span id="year"></span> Rasagnya Bethi</small>
+        </div>
+    </footer>
+    <!--
+        Scripts:
+        - Loads script.js for dynamic year, navigation, scroll reveal, etc.
+    -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+        Head section:
+        - Sets character encoding and viewport for responsive design
+        - Sets page title
+        - Loads Google Fonts for typography
+        - Links to main stylesheet
+    -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects • Rasagnya Bethi</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!--
+        Site header and navigation:
+        - Contains logo, hamburger menu for mobile, and navigation links
+        - Uses .site-header for sticky header styling
+        - .navwrap for flex layout
+        - .logo links to home page
+        - .hamburger toggles nav on mobile
+        - .nav contains main navigation links, with 'active' class for current page
+    -->
+    <header class="site-header">
+        <div class="container navwrap">
+            <a class="logo" href="index.html">RB</a>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+            <nav class="nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="resume.html">Resume</a>
+                <a class="active" href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!--
+            Section head:
+            - Displays main heading for the Projects page
+            - Uses .section-head for spacing and style
+        -->
+        <header class="section-head">
+            <h1>Projects</h1>
+        </header>
+
+        <!--
+            Project 1 card:
+            - .card and .glass for style
+            - .project for custom project styling
+            - data-reveal for scroll animation
+            - Includes project title, description, image, and publication link
+        -->
+        <section class="card glass project" data-reveal>
+            <h2>AI-Based Protein Binding Classifier</h2>
+            <p>
+                Co-authored and developed a deep learning model combining Residual Networks and attention modules
+                to classify protein sequences as DNA-binding, RNA-binding, both, or non-binding.
+                Achieved up to <strong>0.95 AUC</strong> using PSSM inputs and sequence-aware convolution.
+            </p>
+            <p>
+                <img src="images/arch.jpeg" alt="Screenshot of AI-Based Protein Binding Classifier"
+                    style="max-width:50%; border-radius:8px; margin:1rem 0;">
+            </p>
+            <p>
+                <a class="btn btn-solid btn-small" href="https://ieeexplore.ieee.org/document/11020649"
+                    target="_blank">View Publication</a>
+            </p>
+        </section>
+
+        <!--
+            Project 2 card:
+            - .card and .glass for style
+            - .project for custom project styling
+            - data-reveal for scroll animation
+            - Includes project title, description, images, and Colab link
+        -->
+        <section class="card glass project" data-reveal>
+            <h2>MindGuard – Mental Health Classification</h2>
+            <p>
+                Developed machine learning models on DASS-42 data to classify depression, anxiety, and stress levels.
+                Improved accuracy from <strong>60–70%</strong> to <strong>80–98%</strong> by combining key subscale
+                scores for personalized insights.
+            </p>
+            <img src="images/download.png" alt="Screenshot of MindGuard ML Project"
+                style="max-width:25%; border-radius:8px; margin:1rem 0;">
+            <img src="images/download (1).png" alt="Screenshot of MindGuard ML Project"
+                style="max-width:25%; border-radius:8px; margin:1rem 0;">
+            <img src="images/download (2).png" alt="Screenshot of MindGuard ML Project"
+                style="max-width:25%; border-radius:8px; margin:1rem 0;">
+            <p>
+                <a class="btn btn-solid btn-small"
+                    href="https://colab.research.google.com/drive/1V1xIbW53mcC-FIKa9zgH5tgtQeyvrSNq?usp=sharing#scrollTo=Umdqz-cX6F11"
+                    target="_blank">Open in Colab</a>
+            </p>
+            <!--
+                If you have a live demo, link it too
+                Example:
+                <a class="btn btn-solid btn-small" href="https://your-demo-link.com" target="_blank">Live Demo</a>
+            -->
+        </section>
+    </main>
+
+    <!--
+        Site footer:
+        - .site-footer for styling
+        - Displays copyright
+        - Uses <span id="year"> for dynamic year (set by script.js)
+    -->
+    <footer class="site-footer">
+        <div class="container">
+            <small>© <span id="year"></span> Rasagnya Bethi</small>
+        </div>
+    </footer>
+    <!--
+        Scripts:
+        - Loads script.js for dynamic year, navigation, scroll reveal, etc.
+    -->
+    <script src="script.js"></script>
+</body>
+
+</html>

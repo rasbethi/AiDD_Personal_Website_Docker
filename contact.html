@@ -1,0 +1,128 @@
+<!--
+    contact.html
+    Rasagnya Bethi Personal Website
+    Contact page with email and form.
+    Detailed comments added for clarity.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+        Head section:
+        - Sets character encoding and viewport for responsive design
+        - Sets page title
+        - Loads Google Fonts for typography
+        - Links to main stylesheet
+    -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact • Rasagnya Bethi</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!--
+        Site header and navigation:
+        - Contains logo, hamburger menu for mobile, and navigation links
+        - Uses .site-header for sticky header styling
+        - .navwrap for flex layout
+        - .logo links to home page
+        - .hamburger toggles nav on mobile
+        - .nav contains main navigation links, with 'active' class for current page
+    -->
+    <header class="site-header">
+        <div class="container navwrap">
+            <a class="logo" href="index.html">RB</a>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+            <nav class="nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="resume.html">Resume</a>
+                <a href="projects.html">Projects</a>
+                <a class="active" href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!--
+            Section head:
+            - Displays main heading for the Contact page
+            - Uses .section-head for spacing and style
+        -->
+        <header class="section-head">
+            <h1>contact</h1>
+        </header>
+        <!--
+            Contact info:
+            - Shows email address and instructions
+            - .center and .muted for styling
+        -->
+        <p class="center muted">email me at <a href="mailto:rasbethi@gmail.com">rasbethi@gmail.com</a> or use the form
+            below.</p>
+        <!--
+            Contact form:
+            - Uses #contactForm for JS validation
+            - .form, .card, .glass for styling
+            - action="thankyou.html" redirects to thank you page on submit
+            - method="get" for form submission
+            - novalidate disables browser validation (uses custom JS)
+            - Each .form-row contains label, input, and error/hint
+        -->
+        <form id="contactForm" class="form card glass" action="thankyou.html" method="get" novalidate>
+            <fieldset>
+                <h2>Send a message</h2>
+                <div class="form-row">
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" name="firstName" type="text" required />
+                    <span class="error" aria-live="polite"></span>
+                </div>
+                <div class="form-row">
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" name="lastName" type="text" required />
+                    <span class="error" aria-live="polite"></span>
+                </div>
+                <div class="form-row">
+                    <label for="email">Email Address</label>
+                    <input id="email" name="email" type="email" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" />
+                    <span class="error" aria-live="polite"></span>
+                </div>
+                <div class="form-row">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" minlength="8" required />
+                    <span class="hint">minimum 8 characters</span>
+                    <span class="error" aria-live="polite"></span>
+                </div>
+                <div class="form-row">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input id="confirmPassword" name="confirmPassword" type="password" minlength="8" required />
+                    <span class="error" aria-live="polite"></span>
+                </div>
+                <div class="form-row">
+                    <button class="btn btn-solid" type="submit">send</button>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+
+    <!--
+        Site footer:
+        - .site-footer for styling
+        - Displays copyright
+        - Uses <span id="year"> for dynamic year (set by script.js)
+    -->
+    <footer class="site-footer">
+        <div class="container"><small>© <span id="year"></span> rasagnya bethi</small></div>
+    </footer>
+    <!--
+        Scripts:
+        - Loads script.js for dynamic year, navigation, scroll reveal, form validation, etc.
+    -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!--
+    about.html
+    Rasagnya Bethi Personal Website
+    This page contains information about Rasagnya, including background, interests, and values.
+    Detailed comments added for clarity.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+        Head section:
+        - Sets character encoding and viewport for responsive design
+        - Sets page title
+        - Loads Google Fonts for typography
+        - Links to main stylesheet
+    -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About • Rasagnya Bethi</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!--
+        Site header and navigation:
+        - Contains logo, hamburger menu for mobile, and navigation links
+        - Uses .site-header for sticky header styling
+        - .navwrap for flex layout
+        - .logo links to home page
+        - .hamburger toggles nav on mobile
+        - .nav contains main navigation links, with 'active' class for current page
+    -->
+    <header class="site-header">
+        <div class="container navwrap">
+            <a class="logo" href="index.html">RB</a>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+            <nav class="nav" aria-label="Primary">
+                <a href="index.html">Home</a>
+                <a class="active" href="about.html">About</a>
+                <a href="resume.html">Resume</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!--
+            Main content container:
+            - Uses .container for max-width and padding
+        -->
+        <!--
+            Section head:
+            - Displays main heading for the About page
+            - Uses .section-head for spacing and style
+        -->
+        <header class="section-head">
+            <h1>About Me</h1>
+        </header>
+        <!--
+            About grid:
+            - Uses .about-grid for two-column layout (photo + text)
+            - data-reveal attribute for scroll animation
+        -->
+        <div class="about-grid" data-reveal>
+            <!--
+                Profile photo:
+                - .about-photo for styling
+                - .glass for frosted glass effect
+                - Image of Rasagnya Bethi
+            -->
+            <figure class="about-photo glass">
+                <img src="images/profile.jpeg" alt="Portrait of Rasagnya Bethi" />
+            </figure>
+            <!--
+                About copy:
+                - Contains bio, experience, and interests
+                - .about-copy for text styling
+                - Two paragraphs and a ticklist of key facts
+            -->
+            <div class="about-copy">
+                <p>
+                    I’m a Master of Science in Information Systems (MSIS) student at Indiana University’s Kelley School
+                    of Business (’26).
+                    My passion lies in making sense of messy data and transforming it into insights that help people and
+                    businesses make smarter choices.
+                </p>
+                <p>
+                    I’ve worked on SQL dashboards, database design, and machine learning experiments, and I love the
+                    balance of technical depth and
+                    teamwork. Whether it’s structuring a schema, cleaning a dataset, or explaining a model to a
+                    non-technical audience, I aim for clarity and impact.
+                </p>
+                <!--
+                    Ticklist:
+                    - Unordered list of key facts
+                    - .ticklist for custom checkmark styling
+                -->
+                <ul class="ticklist">
+                    <li>Based in Bloomington, IN</li>
+                    <li>Interests: data analytics, product management, design, coffee, kickball</li>
+                    <li>Goal: a Summer ’26 internship where I can build, analyze, and present with impact</li>
+                </ul>
+            </div>
+        </div>
+
+        <!--
+            Values and Fun Facts cards:
+            - .cards2 for two-column card layout
+            - Each card uses .card and .glass for style
+            - First card: personal values
+            - Second card: fun facts
+        -->
+        <section class="cards2" data-reveal>
+            <article class="card glass">
+                <h2>Values</h2>
+                <p>
+                    Clarity over complexity • Measure what matters • Ship ideas, not just slides •
+                    Collaboration and kindness on teams
+                </p>
+            </article>
+            <article class="card glass">
+                <h2>Fun Facts</h2>
+                <p>
+                    I’ll color-code your Kanban board • Own more notebooks than I can fill •
+                    Always up for a good cup of coffee and a debate on data visualization
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <!--
+        Site footer:
+        - .site-footer for styling
+        - Displays copyright
+        - Uses <span id="year"> for dynamic year (set by script.js)
+    -->
+    <footer class="site-footer">
+        <div class="container">
+            <small>© <span id="year"></span> Rasagnya Bethi</small>
+        </div>
+    </footer>
+    <!--
+        Scripts:
+        - Loads script.js for dynamic year, navigation, scroll reveal, etc.
+    -->
+    <script src="script.js"></script>
+</body>
+
+</html>
