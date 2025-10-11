@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rasagnya Bethi • Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container navwrap">
+            <a class="logo" href="{{ url_for('home') }}" aria-label="Rasagnya Home">RB</a>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+            <nav class="nav" aria-label="Primary">
+                <a class="{{ 'active' if active=='home' else '' }}" href="{{ url_for('home') }}">Home</a>
+                <a class="{{ 'active' if active=='about' else '' }}" href="{{ url_for('about') }}">About</a>
+                <a class="{{ 'active' if active=='resume' else '' }}" href="{{ url_for('resume') }}">Resume</a>
+                <a class="{{ 'active' if active=='projects' else '' }}" href="{{ url_for('projects') }}">Projects</a>
+                <a class="{{ 'active' if active=='contact' else '' }}" href="{{ url_for('contact') }}">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero parallax">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h1 class="grad-head">Hi, I’m Rasagnya.</h1>
+                    <p class="lead">
+                        MSIS student at Kelley (’26). I specialize in turning complex data into clear insights —
+                        building SQL dashboards, designing clean schemas, and telling data-driven stories that guide
+                        decisions.
+                    </p>
+                </div>
+                <figure class="hero-card glass">
+                    <img src="{{ url_for('static', filename='images/profile.JPEG') }}"
+                        alt="Portrait of Rasagnya Bethi" />
+                </figure>
+            </div>
+            <div class="hero-wave" aria-hidden="true"></div>
+        </section>
+
+        <section class="container cards3" data-reveal>
+            <article class="card glass">
+                <h2>What I Do</h2>
+                <p>Data analytics, dashboard design, and database modeling.</p>
+            </article>
+            <article class="card glass">
+                <h2>Toolbox</h2>
+                <p>SQL • Python • Pandas • scikit-learn • HTML/CSS/JS • KPI design • A/B testing • Data storytelling</p>
+            </article>
+            <article class="card glass">
+                <h2>Currently</h2>
+                <p>Exploring advanced coursework and preparing for 2026 internships.</p>
+            </article>
+        </section>
+
+        <section class="container" data-reveal>
+            <header class="section-head">
+                <h2>Spotlight</h2>
+                <p>A few projects and experiments that highlight my interests and skills.</p>
+            </header>
+            <div class="slider" id="homeSlider">
+                <button class="slide-btn prev" aria-label="previous">‹</button>
+                <div class="slides">
+                    <article class="slide glass">
+                        <h3>Operations KPI Dashboard</h3>
+                        <p>Built SQL views and trend analysis for decision-making.</p>
+                    </article>
+                    <article class="slide glass">
+                        <h3>Shopping Cart Database</h3>
+                        <p>Designed normalized schema for scalable e-commerce.</p>
+                    </article>
+                    <article class="slide glass">
+                        <h3>Protein Sequence Classifier</h3>
+                        <p>Developed CNN with SE blocks for DNA/RNA binding prediction.</p>
+                    </article>
+                </div>
+                <button class="slide-btn next" aria-label="next">›</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Rasagnya Bethi</p>
+        <a class="btn btn-outline btn-small" href="https://github.com/rasbethi/AiDD_Personal_Website"
+            target="_blank">View My GitHub Repo</a>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

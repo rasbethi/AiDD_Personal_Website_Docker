@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects • Rasagnya Bethi</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container navwrap">
+            <a class="logo" href="{{ url_for('home') }}">RB</a>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+            <nav class="nav" aria-label="Primary">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('resume') }}">Resume</a>
+                <a class="active" href="{{ url_for('projects') }}">Projects</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="section-head">
+            <h1>Projects</h1>
+        </header>
+
+        <section class="card glass project" data-reveal>
+            <h2>AI-Based Protein Binding Classifier</h2>
+            <p>
+                Co-authored and developed a deep learning model combining Residual Networks and attention modules
+                to classify protein sequences as DNA-binding, RNA-binding, both, or non-binding.
+                Achieved up to <strong>0.95 AUC</strong> using PSSM inputs and sequence-aware convolution.
+            </p>
+            <img src="{{ url_for('static', filename='images/arch.jpeg') }}"
+                alt="Protein Binding Classifier Architecture" style="max-width:50%; border-radius:8px; margin:1rem 0;">
+            <p>
+                <a class="btn btn-solid btn-small" href="https://ieeexplore.ieee.org/document/11020649" target="_blank">
+                    View Publication
+                </a>
+            </p>
+        </section>
+
+        <section class="card glass project" data-reveal>
+            <h2>MindGuard – Mental Health Classification</h2>
+            <p>
+                Developed ML models on DASS-42 data to classify depression, anxiety, and stress levels.
+                Improved accuracy from <strong>60–70%</strong> to <strong>80–98%</strong> by combining key subscale
+                scores for personalized insights.
+            </p>
+            <img src="{{ url_for('static', filename='images/download.png') }}" alt="MindGuard ML Project 1"
+                style="max-width:25%; border-radius:8px; margin:1rem 0;">
+            <img src="{{ url_for('static', filename='images/download (1).png') }}" alt="MindGuard ML Project 2"
+                style="max-width:25%; border-radius:8px; margin:1rem 0;">
+            <img src="{{ url_for('static', filename='images/download (2).png') }}" alt="MindGuard ML Project 3"
+                style="max-width:25%; border-radius:8px; margin:1rem 0;">
+            <p>
+                <a class="btn btn-solid btn-small"
+                    href="https://colab.research.google.com/drive/1V1xIbW53mcC-FIKa9zgH5tgtQeyvrSNq?usp=sharing#scrollTo=Umdqz-cX6F11"
+                    target="_blank">Open in Colab</a>
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Rasagnya Bethi</p>
+        <a class="btn btn-outline btn-small" href="https://github.com/rasbethi/AiDD_Personal_Website" target="_blank">
+            View My GitHub Repo
+        </a>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
